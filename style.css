@@ -1,185 +1,174 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background: #090d0b; /* Disamakan dengan warna Tailwind index Anda */
-    color: white;
-    position: relative;
-    overflow-x: hidden;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    backdrop-filter: blur(15px);
-    background: rgba(9, 13, 11, 0.85);
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
-}
-
-.container {
-    max-width: 1280px; /* Diperlebar agar pas dengan max-w-7xl Tailwind */
-    margin: auto;
-    padding: 0 24px;
-}
-
 /* ==========================================================================
-   NAVBAR (KUNCI PERBAIKAN SEJAJAR)
+   EFEK VISUAL BACKGROUND & SCROLLBAR
    ========================================================================== */
-.navbar {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Membuat Logo kiri, Menu tengah, CV kanan sejajar */
+html {
+    scroll-behavior: smooth;
 }
 
-.logo {
-    font-size: 24px; /* Sedikit dikecilkan agar proporsional */
-    font-weight: 800;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: 1px;
+/* Tekstur Titik-Titik Grid Halus ala Developer Workspace */
+.bg-grid-texture {
+    background-image: radial-gradient(rgba(0, 255, 102, 0.4) 1px, transparent 1px);
+    background-size: 24px 24px;
 }
 
-.logo span {
-    color: #00ff66;
-}
-
-/* MENU DESKTOP */
-.nav-links {
-    display: flex;
-    gap: 40px; /* Jarak antar menu */
-}
-
-.nav-links a {
-    color: #9ca3af; /* Warna abu-abu soft khas Tailwind text-gray-400 */
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    transition: .3s;
-}
-
-.nav-links a:hover {
-    color: #00ff66;
-}
-
-/* BUTTON CV */
-.cv-btn {
-    text-decoration: none;
-    background: transparent;
-    border: 1px solid #00ff66;
-    color: #00ff66;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 13px;
-    transition: .3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.cv-btn:hover {
-    background: #00ff66;
-    color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
-}
-
-/* ==========================================================================
-   ELEMENT TAMBAHAN UNTUK TEMPLATE PORTFOLIO ANDA
-   ========================================================================== */
-
-/* Ambient Blur (Latar belakang menyala samar) */
+/* Cahaya Neon di Belakang Layout */
 .ambient-blur {
     position: absolute;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(0, 255, 102, 0.07) 0%, rgba(0, 0, 0, 0) 70%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 255, 102, 0.06) 0%, rgba(0, 0, 0, 0) 70%);
     border-radius: 50%;
     pointer-events: none;
-    z-index: 1;
-    filter: blur(40px);
+    z-index: 0;
+    filter: blur(50px);
 }
 
+/* ==========================================================================
+   ANIMASI ELEMENT KUSTOM
+   ========================================================================== */
+
+/* Animasi Lambat untuk Latar Belakang Mendengkur */
 .animate-pulse-slow {
-    animation: pulseSlow 8s ease-in-out infinite;
+    animation: pulseSlow 10s ease-in-out infinite;
+}
+.animate-pulse-slow-reverse {
+    animation: pulseSlowReverse 12s ease-in-out infinite;
 }
 
 @keyframes pulseSlow {
-    0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.1) translate(10px, -10px); }
+    0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.4; }
+    50% { transform: scale(1.15) translate(30px, -20px); opacity: 0.8; }
+}
+@keyframes pulseSlowReverse {
+    0%, 100% { transform: scale(1.1) translate(0px, 0px); opacity: 0.5; }
+    50% { transform: scale(0.9) translate(-40px, 40px); opacity: 0.3; }
 }
 
-/* Text Glow untuk Typewriter */
-.neon-text-glow {
-    text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+/* Animasi Melambai untuk Emoji Tangan 👋 */
+.animate-wave {
+    animation: wave 2.5s infinite;
+    transform-origin: 70% 70%;
+}
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    20% { transform: rotate(-10deg); }
+    40% { transform: rotate(14deg); }
+    60% { transform: rotate(-4deg); }
+    80% { transform: rotate(10deg); }
 }
 
-/* Badge Float Animation */
+/* Kursor Ketik Berkedip */
+.animate-blink {
+    animation: blink 0.8s infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Pengambangan Halus Stat Badge */
 .animate-float {
     animation: float 4s ease-in-out infinite;
 }
-
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-8px); }
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #090d0b; }
-::-webkit-scrollbar-thumb { background: #111714; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: #00ff66; }
+/* Efek Teks Menyala */
+.neon-text-glow {
+    text-shadow: 0 0 12px rgba(0, 255, 102, 0.4);
+}
 
 /* ==========================================================================
-   RESPONSIVE / MOBILE STYLE
+   LINKS & UTILITY COMPONENT HOVERS
    ========================================================================== */
-.menu-toggle {
-    display: none;
-    font-size: 24px;
+
+/* Animasi Garis Bawah saat Hover di Menu Utama */
+.nav-item {
+    color: #9ca3af;
+    text-decoration: none;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00ff66;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+.nav-item:hover {
     color: #fff;
-    cursor: pointer;
+}
+.nav-item:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    /* Mengubah navigasi menjadi dropdown rapi saat di HP */
-    .nav-links {
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: #111714;
-        border-bottom: 1px solid rgba(255, 255, 255, .05);
-        flex-direction: column;
-        gap: 0;
-        padding: 10px 0;
-        display: none; /* Dikontrol via JS toggle class 'active' */
-    }
-
-    .nav-links a {
-        display: block;
-        padding: 15px 30px;
-        font-size: 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, .02);
-    }
-
-    /* Ketika menu aktif (diklik tombol hamburger) */
-    .nav-links.active {
-        display: flex;
-    }
-
-    /* Tombol CV disembunyikan di navbar desktop, muncul di dalam menu mobile */
-    .cv-btn {
-        display: none; 
-    }
+/* Tombol Sosial Media Pop-up */
+.social-icon-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(17, 23, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+.social-icon-btn:hover {
+    color: #00ff66;
+    border-color: rgba(0, 255, 102, 0.4);
+    background: #050b08;
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 255, 102, 0.1);
+}
+
+/* Kartu Statistik Animatif (Grid) */
+.stat-card {
+    background: #0d1410;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.stat-card:hover {
+    border-color: rgba(0, 255, 102, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 255, 102, 0.04);
+}
+
+.stat-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: #050b08;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00ff66;
+    transition: all 0.3s ease;
+}
+.stat-card:hover .stat-icon-wrapper {
+    background: #00ff66;
+    color: #000;
+}
+
+/* Scrollbar Custom */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #050b08; }
+::-webkit-scrollbar-thumb { background: #111714; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #00ff66; }
