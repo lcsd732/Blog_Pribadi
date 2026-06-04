@@ -22,6 +22,56 @@ body{
     animation:bgMove 10s ease infinite;
 }
 
+body::before{
+content:'';
+position:fixed;
+width:800px;
+height:800px;
+background:#4ade80;
+filter:blur(200px);
+opacity:.15;
+top:-200px;
+left:-200px;
+animation:aurora 10s infinite alternate;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:600px;
+height:600px;
+background:#00ffcc;
+filter:blur(180px);
+opacity:.12;
+bottom:-200px;
+right:-200px;
+animation:aurora2 12s infinite alternate;
+}
+
+@keyframes aurora{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(300px,200px);
+}
+
+}
+
+@keyframes aurora2{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(-300px,-200px);
+}
+
+}
+
 @keyframes bgMove{
     0%{
         background-position:0% 50%;
