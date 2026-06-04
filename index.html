@@ -244,6 +244,12 @@
     </footer>
 
     <script>
+        const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    });
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
