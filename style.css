@@ -172,3 +172,23 @@ html {
 ::-webkit-scrollbar-track { background: #050b08; }
 ::-webkit-scrollbar-thumb { background: #111714; border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: #00ff66; }
+
+.social-icon-btn{
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:#0d1410;
+    border:1px solid rgba(255,255,255,.08);
+    color:#fff;
+    transition:.3s ease;
+}
+
+.social-icon-btn:hover{
+    background:#00ff66;
+    color:#000;
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(0,255,102,.4);
+}
