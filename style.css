@@ -52,6 +52,18 @@ transform:translate(300px,200px);
 transform:translate(-300px,-200px);
 }
 }
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 30px;
+}
+
+/* NAVBAR */
+.navbar{
+    height:80px;
+    display:flex;
+    align-items:center;
+}
 
 /* Navbar */
 
