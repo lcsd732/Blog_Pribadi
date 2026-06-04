@@ -163,9 +163,11 @@ header{
 }
 
 .hero h1{
-    font-size:60px;
-    margin-bottom:20px;
+    font-size:80px;
+    line-height:1;
+    font-weight:800;
 }
+
 
 .hero h1 span{
     color:#00ff66;
@@ -225,6 +227,16 @@ header{
     .hero h1{
         font-size:40px;
     }
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 20px;
+    border:1px solid #133f32;
+    border-radius:30px;
+    color:#00ff73;
+    background:#061913;
+    margin-bottom:25px;
 }
 
 
