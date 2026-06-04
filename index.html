@@ -240,14 +240,3 @@
     <footer class="bg-darkCard/40 border-t border-gray-900 py-8 text-center text-xs text-gray-600">
         <p>&copy; 2026 DevFolio. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Perbaikan Logic Mobile Menu Toggle
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            const icon = menuBtn.querySelector('i');
-            if(mobileMenu.classList.contains('hidden')) {
-                icon.className =
