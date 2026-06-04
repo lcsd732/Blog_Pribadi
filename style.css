@@ -169,9 +169,21 @@ header{
 }
 
 
+
 .hero h1 span{
-    color:#00ff66;
+    color:#00ff73;
+    text-shadow:0 0 15px #00ff73;
 }
+
+.typewriter{
+    color:#00ff73;
+    text-shadow:0 0 20px #00ff73;
+}
+.cursor{
+    color:#00ff73;
+    animation:blink .8s infinite;
+}
+
 
 .hero p{
     max-width:700px;
