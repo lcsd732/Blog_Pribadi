@@ -69,8 +69,13 @@
 }
 
 body{
-    background:#050b08;
+    background:#020d0a;
     color:white;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
 }
 
 header{
