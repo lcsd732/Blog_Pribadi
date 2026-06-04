@@ -1,265 +1,273 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>DevFolio | Software Engineer</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFolio - Creative Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#090d0b',
+                        darkCard: '#111714',
+                        neonGreen: '#00ff66',
+                        neonGreenDim: 'rgba(0, 255, 102, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-
-<body>
-
-<!-- Aurora Background -->
-<div class="aurora aurora1"></div>
-<div class="aurora aurora2"></div>
-
-<!-- Floating Tech -->
-
-<div class="floating html">HTML5</div>
-<div class="floating css">CSS3</div>
-<div class="floating js">JavaScript</div>
-<div class="floating php">PHP</div>
-<div class="floating java">Java</div>
-
-<!-- Navbar -->
-
-<nav>
-
-<div class="logo">
-Dev<span>Folio</span>
-</div>
-
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#blog">Blog</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
-<a href="#" class="cv-btn">
-Download CV
-</a>
-
-</nav>
-
-<!-- Hero -->
-
-<section class="hero" id="home">
-
-<video autoplay muted loop playsinline class="video-bg">
-<source src="assets/developer.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<div class="badge">
-👋 Welcome To My Portfolio
-</div>
-
-<h1>
-Creative Developer &
-<span id="typing"></span>
-</h1>
-
-<p>
-Software Engineer yang fokus pada Web Development,
-Cloud Computing, Artificial Intelligence dan
-Cyber Security.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#blog" class="btn-primary">
-Explore Blog
-</a>
-
-<a href="#contact" class="btn-secondary">
-Contact Me
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- About -->
-
-<section id="about">
-
-<h2 class="title">
-About Me
-</h2>
-
-<div class="about-grid">
-
-<div class="about-card">
-
-<h3>Building Digital Products</h3>
-
-<p>
-Saya adalah Software Engineer yang memiliki
-ketertarikan pada pengembangan sistem modern,
-cloud architecture, keamanan sistem dan AI.
-</p>
-
-<ul>
-<li>✔ Full Stack Development</li>
-<li>✔ Cloud Engineer</li>
-<li>✔ DevOps</li>
-<li>✔ Cyber Security</li>
-</ul>
-
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<h2>25+</h2>
-<p>Projects</p>
-</div>
-
-<div class="stat">
-<h2>15+</h2>
-<p>Clients</p>
-</div>
-
-<div class="stat">
-<h2>3+</h2>
-<p>Years Experience</p>
-</div>
-
-<div class="stat">
-<h2>10+</h2>
-<p>Technologies</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Blog -->
-
-<section id="blog">
-
-<h2 class="title">
-Latest Articles
-</h2>
-
-<div class="blog-grid">
-
-<div class="blog-card">
-<div class="thumb"></div>
-<h3>Modern Web Development</h3>
-<p>Teknologi terbaru yang wajib dipelajari developer.</p>
-<a href="#">Read More →</a>
-</div>
-
-<div class="blog-card">
-<div class="thumb"></div>
-<h3>Cloud Computing</h3>
-<p>Panduan membangun infrastruktur cloud modern.</p>
-<a href="#">Read More →</a>
-</div>
-
-<div class="blog-card">
-<div class="thumb"></div>
-<h3>Cyber Security</h3>
-<p>Melindungi aplikasi dari ancaman digital.</p>
-<a href="#">Read More →</a>
-</div>
-
-</div>
-
-</section>
-
-<!-- Contact -->
-
-<section id="contact">
-
-<h2 class="title">
-Contact Me
-</h2>
-
-<div class="contact-card">
-
-<p>Email : yourname@email.com</p>
-<p>Github : github.com/yourname</p>
-<p>LinkedIn : linkedin.com/in/yourname</p>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 DevFolio | Software Engineer Blog
-</footer>
-
-<script>
-
-const words = [
-"Software Engineer",
-"Full Stack Developer",
-"Cloud Engineer",
-"Tech Blogger",
-"AI Enthusiast"
-];
-
-let i = 0;
-let j = 0;
-let current = "";
-let deleting = false;
-
-function typing(){
-
-current = words[i];
-
-if(!deleting){
-
-document.getElementById("typing").textContent =
-current.substring(0,j++);
-
-if(j > current.length){
-
-deleting = true;
-
-setTimeout(typing,1500);
-
-return;
-}
-
-}else{
-
-document.getElementById("typing").textContent =
-current.substring(0,j--);
-
-if(j < 0){
-
-deleting = false;
-
-i = (i + 1) % words.length;
-}
-}
-
-setTimeout(
-typing,
-deleting ? 50 : 100
-);
-
-}
-
-typing();
-
-</script>
-
+<body class="bg-darkBg text-gray-300 font-sans min-h-screen relative overflow-x-hidden selection:bg-neonGreen selection:text-black">
+
+    <div class="ambient-blur top-10 -left-10 animate-pulse-slow"></div>
+    <div class="ambient-blur top-1/3 -right-10 animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="ambient-blur bottom-10 left-1/4 animate-pulse-slow"></div>
+
+    <header class="sticky top-0 z-50 bg-[#090d0b]/80 backdrop-blur-md border-b border-gray-800/40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold text-white tracking-wider flex items-center gap-1">
+                DevFolio<span class="text-neonGreen text-3xl">.</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#home" class="text-white hover:text-neonGreen transition-colors">Home</a>
+                <a href="#about" class="hover:text-neonGreen transition-colors">About</a>
+                <a href="#projects" class="hover:text-neonGreen transition-colors">Projects</a>
+                <a href="#blog" class="hover:text-neonGreen transition-colors">Blog</a>
+                <a href="#contact" class="hover:text-neonGreen transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center">
+                <a href="#" class="bg-neonGreen text-black font-semibold px-5 py-2.5 rounded-full flex items-center gap-2 hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 text-sm">
+                    Download CV <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl hover:text-neonGreen transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-darkCard/95 border-b border-gray-800 px-6 py-6 absolute w-full left-0 transition-all duration-300 ease-in-out">
+            <nav class="flex flex-col gap-4 text-base">
+                <a href="#home" class="text-white hover:text-neonGreen transition-colors py-1">Home</a>
+                <a href="#about" class="hover:text-neonGreen transition-colors py-1">About</a>
+                <a href="#projects" class="hover:text-neonGreen transition-colors py-1">Projects</a>
+                <a href="#blog" class="hover:text-neonGreen transition-colors py-1">Blog</a>
+                <a href="#contact" class="hover:text-neonGreen transition-colors py-1">Contact</a>
+                <a href="#" class="bg-neonGreen text-black text-center font-semibold px-5 py-2.5 rounded-full mt-2 hover:bg-white transition-colors text-sm">
+                    Download CV
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="relative max-w-7xl mx-auto px-6 pt-12 pb-24 lg:pt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10">
+        <div class="lg:col-span-5 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 bg-gray-900/80 border border-gray-800 px-4 py-1.5 rounded-full text-xs text-neonGreen font-medium">
+                <span>👋 Hi, I'm</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-white leading-tight">
+                Creative Developer & <br class="hidden sm:inline">
+                <span class="text-neonGreen neon-text-glow">Tech Enthusiast</span><span class="text-neonGreen">|</span>
+            </h1>
+            
+            <p class="text-gray-400 text-sm sm:text-base max-w-md mx-auto lg:mx-0 leading-relaxed">
+                I build modern, responsive and user-friendly websites with a focus on performance and great user experience.
+            </p>
+            
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                <a href="#projects" class="bg-neonGreen text-black font-semibold px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-neonGreen/10 hover:shadow-white/10">
+                    View My Work <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <a href="#contact" class="bg-transparent border border-gray-700 text-white font-medium px-6 py-3 rounded-xl flex items-center gap-2 hover:border-neonGreen hover:text-neonGreen transition-all duration-300 transform hover:-translate-y-1">
+                    Contact Me <span class="w-2 h-2 rounded-full bg-neonGreen inline-block animate-pulse"></span>
+                </a>
+            </div>
+
+            <div class="flex items-center justify-center lg:justify-start gap-3 pt-6">
+                <a href="#" class="w-11 h-11 rounded-xl bg-gray-900/60 border border-gray-800/80 flex items-center justify-center text-gray-400 hover:text-neonGreen hover:border-neonGreen/50 hover:bg-gray-900 transition-all duration-300 transform hover:scale-110">
+                    <i class="fa-brands fa-github text-lg"></i>
+                </a>
+                <a href="#" class="w-11 h-11 rounded-xl bg-gray-900/60 border border-gray-800/80 flex items-center justify-center text-gray-400 hover:text-neonGreen hover:border-neonGreen/50 hover:bg-gray-900 transition-all duration-300 transform hover:scale-110">
+                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                </a>
+                <a href="#" class="w-11 h-11 rounded-xl bg-gray-900/60 border border-gray-800/80 flex items-center justify-center text-gray-400 hover:text-neonGreen hover:border-neonGreen/50 hover:bg-gray-900 transition-all duration-300 transform hover:scale-110">
+                    <i class="fa-brands fa-x-twitter text-lg"></i>
+                </a>
+                <a href="#" class="w-11 h-11 rounded-xl bg-gray-900/60 border border-gray-800/80 flex items-center justify-center text-gray-400 hover:text-neonGreen hover:border-neonGreen/50 hover:bg-gray-900 transition-all duration-300 transform hover:scale-110">
+                    <i class="fa-solid fa-envelope text-lg"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="lg:col-span-7 relative group w-full max-w-2xl mx-auto">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-neonGreen to-emerald-500 rounded-2xl opacity-20 blur-xl group-hover:opacity-35 transition duration-500"></div>
+            
+            <div class="relative bg-[#0d1310] border border-gray-800/60 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 transform hover:scale-[1.01]">
+                <div class="bg-darkCard/90 border-b border-gray-800/60 px-4 py-3 flex items-center justify-between">
+                    <div class="flex items-center gap-1.5">
+                        <span class="w-3 h-3 rounded-full bg-red-500/80 block"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500/80 block"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500/80 block"></span>
+                    </div>
+                    <div class="text-xs text-gray-500 font-mono">devfolio-workspace.exe</div>
+                    <div class="w-10"></div>
+                </div>
+
+                <div class="relative aspect-video w-full bg-black overflow-hidden">
+                    <video class="w-full h-full object-cover opacity-80" autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-coding-on-a-computer-screen-27548-large.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 p-6 flex flex-col justify-between pointer-events-none">
+                        <div class="flex justify-between items-start">
+                            <div class="bg-black/50 backdrop-blur-md border border-gray-800/50 p-3 rounded-xl max-w-xs">
+                                <span class="text-[10px] text-neonGreen font-semibold block mb-0.5">Live Terminal</span>
+                                <p class="text-xs text-white font-mono truncate">npm run dev --production</p>
+                            </div>
+                            <span class="w-2.5 h-2.5 rounded-full bg-neonGreen shadow-[0_0_8px_#00ff66]"></span>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <span class="text-[10px] uppercase tracking-wider text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-gray-800 inline-block">Active Stream</span>
+                            <h3 class="text-base sm:text-lg font-bold text-white leading-tight">Optimizing System Microservices</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="relative max-w-7xl mx-auto px-6 py-20 z-10 border-t border-gray-900">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <div class="lg:col-span-4 flex justify-center">
+                <div class="relative w-72 sm:w-80 aspect-square group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-neonGreen/20 to-transparent rounded-3xl border border-neonGreen/30 transform rotate-6 scale-95 group-hover:rotate-3 transition-transform duration-300"></div>
+                    <div class="absolute inset-0 bg-gray-900 border border-gray-800 rounded-3xl transform -rotate-3 group-hover:rotate-0 transition-transform duration-300 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Profile" class="w-full h-full object-cover opacity-85 grayscale hover:grayscale-0 transition-all duration-500">
+                    </div>
+                    
+                    <div class="absolute -bottom-5 -left-5 bg-[#0d1310] border border-neonGreen/30 px-5 py-4 rounded-2xl neon-glow animate-float">
+                        <span class="text-2xl font-bold text-neonGreen block leading-none">3+</span>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-wide uppercase">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 space-y-5">
+                <div class="flex items-center gap-2 text-neonGreen text-xs font-semibold uppercase tracking-wider">
+                    <span>About Me</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-neonGreen"></span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white leading-tight">
+                    Building digital products with <span class="text-neonGreen">clean code</span>
+                </h2>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    I'm a passionate Full Stack Developer who loves building beautiful and functional web applications. I enjoy turning ideas into real products that solve everyday problems.
+                </p>
+                
+                <ul class="space-y-2.5 pt-2 text-sm text-gray-300">
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-neonGreen text-xs bg-neonGreenDim p-1 rounded-full w-5 h-5 flex items-center justify-center"></i>
+                        <span>Clean, efficient and scalable code</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-neonGreen text-xs bg-neonGreenDim p-1 rounded-full w-5 h-5 flex items-center justify-center"></i>
+                        <span>Modern UI/UX with great attention to detail</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-neonGreen text-xs bg-neonGreenDim p-1 rounded-full w-5 h-5 flex items-center justify-center"></i>
+                        <span>Performance optimization & best practices</span>
+                    </li>
+                </ul>
+
+                <div class="pt-4">
+                    <a href="#" class="inline-flex items-center gap-2 bg-neonGreen text-black font-semibold px-5 py-2.5 rounded-xl hover:bg-white transition-all duration-300 text-sm transform hover:translate-x-1">
+                        Read More About Me <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 grid grid-cols-2 gap-4 w-full">
+                <div class="bg-darkCard border border-gray-800/80 p-5 rounded-2xl flex flex-col justify-between hover:border-neonGreen/30 hover:shadow-[0_0_15px_rgba(0,255,102,0.05)] transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center text-neonGreen group-hover:bg-neonGreen group-hover:text-black transition-colors duration-300">
+                        <i class="fa-solid fa-code text-base"></i>
+                    </div>
+                    <div class="mt-6">
+                        <span class="text-2xl sm:text-3xl font-bold text-white block">25+</span>
+                        <span class="text-xs text-gray-500 font-medium mt-1 block">Projects Completed</span>
+                    </div>
+                </div>
+                <div class="bg-darkCard border border-gray-800/80 p-5 rounded-2xl flex flex-col justify-between hover:border-neonGreen/30 hover:shadow-[0_0_15px_rgba(0,255,102,0.05)] transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center text-neonGreen group-hover:bg-neonGreen group-hover:text-black transition-colors duration-300">
+                        <i class="fa-solid fa-users text-base"></i>
+                    </div>
+                    <div class="mt-6">
+                        <span class="text-2xl sm:text-3xl font-bold text-white block">15+</span>
+                        <span class="text-xs text-gray-500 font-medium mt-1 block">Happy Clients</span>
+                    </div>
+                </div>
+                <div class="bg-darkCard border border-gray-800/80 p-5 rounded-2xl flex flex-col justify-between hover:border-neonGreen/30 hover:shadow-[0_0_15px_rgba(0,255,102,0.05)] transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center text-neonGreen group-hover:bg-neonGreen group-hover:text-black transition-colors duration-300">
+                        <i class="fa-solid fa-mug-hot text-base"></i>
+                    </div>
+                    <div class="mt-6">
+                        <span class="text-2xl sm:text-3xl font-bold text-white block">3+</span>
+                        <span class="text-xs text-gray-500 font-medium mt-1 block">Years Experience</span>
+                    </div>
+                </div>
+                <div class="bg-darkCard border border-gray-800/80 p-5 rounded-2xl flex flex-col justify-between hover:border-neonGreen/30 hover:shadow-[0_0_15px_rgba(0,255,102,0.05)] transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center text-neonGreen group-hover:bg-neonGreen group-hover:text-black transition-colors duration-300">
+                        <i class="fa-solid fa-rocket text-base"></i>
+                    </div>
+                    <div class="mt-6">
+                        <span class="text-2xl sm:text-3xl font-bold text-white block">5+</span>
+                        <span class="text-xs text-gray-500 font-medium mt-1 block">Technologies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-darkCard/40 border-t border-gray-900 py-8 text-center text-xs text-gray-600">
+        <p>&copy; 2026 DevFolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            if(mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars';
+            } else {
+                icon.className = 'fa-solid fa-xmark';
+            }
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.querySelector('i').className = 'fa-solid fa-bars';
+            });
+        });
+    </script>
 </body>
 </html>
