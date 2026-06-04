@@ -1,160 +1,185 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
-    background:#050b08;
-    color:white;
+body {
+    background: #090d0b; /* Disamakan dengan warna Tailwind index Anda */
+    color: white;
+    position: relative;
+    overflow-x: hidden;
 }
 
-header{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:1000;
-    backdrop-filter:blur(15px);
-    background:rgba(5,11,8,.85);
-    border-bottom:1px solid rgba(255,255,255,.08);
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+    background: rgba(9, 13, 11, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:0 30px;
+.container {
+    max-width: 1280px; /* Diperlebar agar pas dengan max-w-7xl Tailwind */
+    margin: auto;
+    padding: 0 24px;
 }
 
-/* NAVBAR */
-.navbar{
-    height:80px;
-    display:flex;
-    align-items:center;
+/* ==========================================================================
+   NAVBAR (KUNCI PERBAIKAN SEJAJAR)
+   ========================================================================== */
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Membuat Logo kiri, Menu tengah, CV kanan sejajar */
 }
 
-.logo{
-    font-size:30px;
-    font-weight:800;
-    color:#fff;
-    text-decoration:none;
-    letter-spacing:1px;
+.logo {
+    font-size: 24px; /* Sedikit dikecilkan agar proporsional */
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
-.logo span{
-    color:#00ff66;
+.logo span {
+    color: #00ff66;
 }
 
-/* MENU */
-.nav-links{
-    margin-left:auto;
-    margin-right:auto;
-    display:flex;
-    gap:60px;
+/* MENU DESKTOP */
+.nav-links {
+    display: flex;
+    gap: 40px; /* Jarak antar menu */
 }
 
-.nav-links a{
-    color:#fff;
-    text-decoration:none;
-    font-weight:500;
-    transition:.3s;
+.nav-links a {
+    color: #9ca3af; /* Warna abu-abu soft khas Tailwind text-gray-400 */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: .3s;
 }
 
-.nav-links a:hover{
-    color:#00ff66;
+.nav-links a:hover {
+    color: #00ff66;
 }
 
-/* BUTTON */
-.cv-btn{
-    text-decoration:none;
-    background:#00ff66;
-    color:#000;
-    padding:12px 25px;
-    border-radius:50px;
-    font-weight:600;
-    transition:.3s;
-    display:flex;
-    align-items:center;
-    gap:8px;
+/* BUTTON CV */
+.cv-btn {
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid #00ff66;
+    color: #00ff66;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.cv-btn:hover{
-    background:white;
-    transform:translateY(-2px);
-    box-shadow:0 0 20px rgba(255,255,255,.3);
+.cv-btn:hover {
+    background: #00ff66;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
 }
 
-/* HERO */
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    flex-direction:column;
+/* ==========================================================================
+   ELEMENT TAMBAHAN UNTUK TEMPLATE PORTFOLIO ANDA
+   ========================================================================== */
+
+/* Ambient Blur (Latar belakang menyala samar) */
+.ambient-blur {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(0, 255, 102, 0.07) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(40px);
 }
 
-.hero h1{
-    font-size:60px;
-    margin-bottom:20px;
+.animate-pulse-slow {
+    animation: pulseSlow 8s ease-in-out infinite;
 }
 
-.hero h1 span{
-    color:#00ff66;
+@keyframes pulseSlow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1) translate(10px, -10px); }
 }
 
-.hero p{
-    max-width:700px;
-    color:#b5b5b5;
-    line-height:1.8;
-    margin-bottom:30px;
+/* Text Glow untuk Typewriter */
+.neon-text-glow {
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
 }
 
-.hero-btn{
-    background:#00ff66;
-    color:black;
-    text-decoration:none;
-    padding:15px 35px;
-    border-radius:10px;
-    font-weight:600;
+/* Badge Float Animation */
+.animate-float {
+    animation: float 4s ease-in-out infinite;
 }
 
-/* MOBILE */
-.menu-toggle{
-    display:none;
-    font-size:30px;
-    cursor:pointer;
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
-@media(max-width:768px){
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #090d0b; }
+::-webkit-scrollbar-thumb { background: #111714; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #00ff66; }
 
-    .menu-toggle{
-        display:block;
-        margin-left:auto;
+/* ==========================================================================
+   RESPONSIVE / MOBILE STYLE
+   ========================================================================== */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
     }
 
-    .nav-links{
-        position:absolute;
-        top:80px;
-        left:0;
-        width:100%;
-        background:#08110d;
-        flex-direction:column;
-        text-align:center;
-        gap:20px;
-        padding:20px 0;
-        display:none;
+    /* Mengubah navigasi menjadi dropdown rapi saat di HP */
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #111714;
+        border-bottom: 1px solid rgba(255, 255, 255, .05);
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+        display: none; /* Dikontrol via JS toggle class 'active' */
     }
 
-    .nav-links.active{
-        display:flex;
+    .nav-links a {
+        display: block;
+        padding: 15px 30px;
+        font-size: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, .02);
     }
 
-    .cv-btn{
-        display:none;
+    /* Ketika menu aktif (diklik tombol hamburger) */
+    .nav-links.active {
+        display: flex;
     }
 
-    .hero h1{
-        font-size:40px;
+    /* Tombol CV disembunyikan di navbar desktop, muncul di dalam menu mobile */
+    .cv-btn {
+        display: none; 
     }
 }
