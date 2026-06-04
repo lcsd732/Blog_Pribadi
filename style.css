@@ -65,6 +65,27 @@ transform:translate(-300px,-200px);
     align-items:center;
 }
 
+
+/* BUTTON */
+.cv-btn{
+    text-decoration:none;
+    background:#00ff66;
+    color:#000;
+    padding:12px 25px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.cv-btn:hover{
+    background:white;
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(255,255,255,.3);
+}
+
 /* Navbar */
 
 nav{
